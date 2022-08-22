@@ -81,16 +81,11 @@ class TestComponent extends CBitrixComponent
 
         $this->arResult['ALL_AVAILABLE_AUTO'] = [];
         while ($arAuto = $dbAuto->GetNext()) {
-            array_push(
-                $this->arResult['ALL_AVAILABLE_AUTO'],
-                [
-                    $arAuto['ID'] => [
-                        'MODEL' => $arAuto['NAME'],
-                        'DRIVER_ID' => $arAuto['PROPERTY_DRIVER_ID_VALUE'],
-                        'CLASS_ID' => $arAuto['PROPERTY_CLASS_ID_VALUE']
-                    ]
-                ]
-                );
+            $this->arResult['ALL_AVAILABLE_AUTO'][$arAuto['ID']] = [
+                'MODEL' => $arAuto['NAME'],
+                'DRIVER_ID' => $arAuto['PROPERTY_DRIVER_ID_VALUE'],
+                'CLASS_ID' => $arAuto['PROPERTY_CLASS_ID_VALUE']
+            ]
         }
         return $this->arResult['ALL_AVAILABLE_AUTO'];
     }
