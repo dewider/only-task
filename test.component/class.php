@@ -85,7 +85,7 @@ class TestComponent extends CBitrixComponent
                 'MODEL' => $arAuto['NAME'],
                 'DRIVER_ID' => $arAuto['PROPERTY_DRIVER_ID_VALUE'],
                 'CLASS_ID' => $arAuto['PROPERTY_CLASS_ID_VALUE']
-            ]
+            ];
         }
         return $this->arResult['ALL_AVAILABLE_AUTO'];
     }
