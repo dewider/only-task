@@ -180,7 +180,7 @@ class TestComponent extends CBitrixComponent
         foreach(array_column($this->arResult['AVAILABLE_AUTO'], 'DRIVER_ID') as $id){
             $idsFilterStr .= $id . ' | ';
         }
-        $idsFilterStr = substr(0, -3);
+        $idsFilterStr = substr($idsFilterStr, 0, -3);
 
         $filter = ["ID" => $idsFilterStr];
         $dbUsers = CUser::GetList(($by="id"), ($order="desc"), $filter);
